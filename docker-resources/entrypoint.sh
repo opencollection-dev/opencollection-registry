@@ -3,21 +3,36 @@ set -e
 
 echo "🚀 Starting OpenCollection Registry..."
 
+# Check if REGISTRY_URL is provided
+if [ -n "$REGISTRY_URL" ]; then
+  echo "📋 Fetching registry from URL: $REGISTRY_URL"
+  
+  # Download the registry file using wget
+  if wget -q "$REGISTRY_URL" -O /app/registry/registry.yml; then
+    echo "✅ Registry downloaded successfully"
+  else
+    echo "❌ ERROR: Failed to download registry from $REGISTRY_URL"
+    exit 1
+  fi
+  
 # Check if registry.yml is mounted
-if [ ! -f /registry.yml ]; then
-  echo "❌ ERROR: registry.yml not found!"
+elif [ -f /registry.yml ]; then
+  echo "📋 Using mounted registry.yml"
+  cp /registry.yml /app/registry/registry.yml
+  
+# No registry source provided
+else
+  echo "❌ ERROR: No registry source provided!"
   echo ""
-  echo "You must mount a registry.yml file to use this container."
+  echo "You must either:"
+  echo "  1. Mount a registry.yml file:"
+  echo "     docker run -p 3000:80 -v \$(pwd)/registry.yml:/registry.yml opencollection-registry"
   echo ""
-  echo "Usage:"
-  echo "  docker run -p 3000:80 -v \$(pwd)/registry.yml:/registry.yml opencollection-registry"
+  echo "  2. Provide a REGISTRY_URL environment variable:"
+  echo "     docker run -p 3000:80 -e REGISTRY_URL=https://example.com/registry.yml opencollection-registry"
   echo ""
-  echo "See README.md for more information."
   exit 1
 fi
-
-echo "📋 Using mounted registry.yml"
-cp /registry.yml /app/registry/registry.yml
 
 # Clean previous collections if they exist
 if [ -d /app/registry/collections ]; then

@@ -1,7 +1,7 @@
 FROM node:22-alpine
 
-# Install git and nginx 
-RUN apk add --no-cache git nginx
+# Install git, nginx, and wget
+RUN apk add --no-cache git nginx wget
 
 # Set working directory, install dependencies
 WORKDIR /app
@@ -30,6 +30,9 @@ RUN mkdir -p /app/registry/collections /app/registry/dist
 
 # Expose port 80 (nginx default)
 EXPOSE 80
+
+# Environment variable for registry URL (optional)
+ENV REGISTRY_URL=""
 
 # Set entrypoint
 ENTRYPOINT ["/app/entrypoint.sh"]
