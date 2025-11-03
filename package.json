@@ -1,6 +1,6 @@
 {
   "name": "opencollection-registry",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "OpenCollection Registry",
   "author": "Bruno Software Inc.",
   "main": "index.js",
