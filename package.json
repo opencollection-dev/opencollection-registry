@@ -12,8 +12,7 @@
   },
   "dependencies": {
     "@octokit/rest": "^20.0.2",
-    "@opencollection/converters": "0.0.1",
-    "@usebruno/filestore": "^0.1.0",
+    "@opencollection/converters": "0.0.2",
     "axios": "^1.7.2",
     "dotenv": "^17.2.3",
     "js-yaml": "^4.1.0",
