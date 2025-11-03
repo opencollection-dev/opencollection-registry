@@ -104,7 +104,7 @@ function CollectionViewer() {
       <div className="bg-white border-b border-gray-200 px-6 py-4 flex-shrink-0">
         <Link
           to="/"
-          className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors"
+          className="inline-flex items-center text-gray-700 hover:text-gray-900 transition-colors"
         >
           <svg
             className="mr-2 w-5 h-5"
@@ -127,9 +127,9 @@ function CollectionViewer() {
       <div className="flex-1 overflow-hidden relative">
         {/* Loading Overlay */}
         {loading && (
-          <div className="absolute inset-0 bg-gray-50 flex items-center justify-center z-10">
+          <div className="absolute inset-0 bg-white flex items-center justify-center z-10">
             <div className="text-center">
-              <div className="text-lg text-gray-600 mb-2">Loading collection...</div>
+              <div className="text-base text-gray-600 mb-2">Loading collection...</div>
               <div className="text-sm text-gray-500">{loadingMessage}</div>
             </div>
           </div>
@@ -137,12 +137,12 @@ function CollectionViewer() {
         
         {/* Error Overlay */}
         {error && (
-          <div className="absolute inset-0 bg-gray-50 flex items-center justify-center z-10">
+          <div className="absolute inset-0 bg-white flex items-center justify-center z-10">
             <div className="text-center">
-              <div className="text-lg text-red-600 mb-4">Error: {error}</div>
+              <div className="text-base text-red-600 mb-4">Error: {error}</div>
               <Link
                 to="/"
-                className="text-blue-600 hover:text-blue-700 underline"
+                className="text-gray-700 hover:text-gray-900 underline"
               >
                 Return to collection list
               </Link>
