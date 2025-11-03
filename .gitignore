@@ -1,0 +1,13 @@
+.env
+.DS_Store
+.idea
+.vscode
+.history
+.claude
+
+registry/collections
+registry/dist
+
+node_modules
+build
+dist

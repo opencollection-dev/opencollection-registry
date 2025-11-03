@@ -1,0 +1,31 @@
+collections:
+  - name: gRPC-api-collection
+    full_name: bruno-collections/gRPC-api-collection
+    description: 'Explore gRPC APIs with this comprehensive collection of endpoints and examples.'
+    versions:
+      - name: latest
+        url: https://github.com/bruno-collections/gRPC-api-collection
+  - name: github-rest-api-collection
+    full_name: bruno-collections/github-rest-api-collection
+    description: 'Interact with GitHub repositories, issues, PRs, and more using this REST API collection.'
+    versions:
+      - name: latest
+        url: https://github.com/bruno-collections/github-rest-api-collection
+  - name: bruno-starter-guide
+    full_name: bruno-collections/bruno-starter-guide
+    description: 'Perfect for beginners - learn Bruno fundamentals with hands-on examples.'
+    versions:
+      - name: latest
+        url: https://github.com/bruno-collections/bruno-starter-guide
+  - name: Bruno-HuggingFace
+    full_name: bruno-collections/Bruno-HuggingFace
+    description: 'Leverage AI models and datasets with Hugging Face API integration.'
+    versions:
+      - name: latest
+        url: https://github.com/bruno-collections/Bruno-HuggingFace
+  - name: jenkins-setup
+    full_name: bruno-collections/jenkins-setup
+    description: 'Automate your CI/CD pipeline with Jenkins API endpoints and workflows.'
+    versions:
+      - name: latest
+        url: https://github.com/bruno-collections/jenkins-setup
