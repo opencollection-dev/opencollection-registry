@@ -73,9 +73,17 @@ cp -r /app/registry/dist/* /app/dist/registry/dist/ 2>/dev/null || true
 # Ensure nginx directories exist
 mkdir -p /run/nginx /var/log/nginx
 
+# Set default port if not provided (for local development)
+export PORT=${PORT:-80}
+
+# Substitute PORT in nginx config
+echo "🔧 Configuring nginx to listen on port $PORT..."
+envsubst '${PORT}' < /etc/nginx/http.d/default.conf > /etc/nginx/http.d/default.conf.tmp
+mv /etc/nginx/http.d/default.conf.tmp /etc/nginx/http.d/default.conf
+
 # Start nginx
 echo ""
 echo "✅ Starting nginx server..."
-echo "🌐 Server is ready at http://localhost"
+echo "🌐 Server is ready on port $PORT"
 exec nginx -g 'daemon off;'
 

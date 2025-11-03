@@ -1,7 +1,7 @@
 FROM node:22-alpine
 
-# Install git, nginx, and wget
-RUN apk add --no-cache git nginx wget
+# Install git, nginx, wget, and gettext (for envsubst)
+RUN apk add --no-cache git nginx wget gettext
 
 # Set working directory, install dependencies
 WORKDIR /app
